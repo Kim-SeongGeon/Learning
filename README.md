@@ -3,7 +3,7 @@
 
 ## 📚 책 목록
 
-[자율주행을 위한 Visual SLAM](https://github.com/saseungmin/summary_of_technical_books/tree/main/summarize_books_in_markdown/%ED%95%A8%EC%88%98%ED%98%95%20%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8)
+[자율주행을 위한 Visual SLAM](https://github.com/Kim-SeongGeon/Learning/tree/main/summarize_books/%EC%9E%90%EC%9C%A8%EC%A3%BC%ED%96%89%EC%9D%84%20%EC%9C%84%ED%95%9C%20Visual%20SLAM)
 <div>
 <img src="ImageFolder/Visual%20Slam%20for%20Self-Driving.jpg" width="200"/>
 </div>
