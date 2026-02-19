@@ -114,6 +114,11 @@ $$z_{k,j} = h(y_j, x_k, v_{k,j})$$
 그리고 여기서 $x,y,z$는 순무의 실제 움직임과 센서의 종류에 따라 달라지는 것을 매개변수화(Parameterization)한 방법이다. 매개변수화란 예를 들어, 순무가 평면에서 이동한다고 가정하면 순무의 포즈는 $x$와 $y$ 좌표 평면에서의 위치와 회전 각도 $\theta$, 즉 $x_k = [x_1, x_2, \theta]_k^{T}$
 라고 나타낼 수 있다. 동시에 모션에 대한 입력 명령은 두 시간 간격의 위치와 회전 각도의 변화 $u_k = [\Delta x_1, \Delta x_2, \Delta \theta]_k^{T}$ 이므로 운동 방정식은 다음과 같이 구현될 수 있다.
 
-$$\begin{bmatrix} x_1 \\ x_2 \\ \theta \end{bmatrix}_k = \begin{bmatrix} x_1 \\ x_2 \\ \theta \end{bmatrix}_{k-1} + \begin{bmatrix} \Delta x_1 \\ \Delta x_2 \\ \Delta \theta \end{bmatrix}_k + w_k $$
+$$\begin{bmatrix} x_1 \\ x_2 \\ \theta \end{bmatrix}^T_k = \begin{bmatrix} x_1 \\ x_2 \\ \theta \end{bmatrix}^T_{k-1} + \begin{bmatrix} \Delta x_1 \\ \Delta x_2 \\ \Delta \theta \end{bmatrix}^T_k + w_k $$
 
 $w_k$는 노이즈이며 위의 식은 단순한 선형 관계이다. 그러나 모든 입력 명령이 변위와 각도의 변화는 아니다. 예를 들어, "액셀러레이터" 또는 "컨트롤 스틱"의 입력은 속도 또는 가속도이므로 더 복잡한 다른 형태의 모션 방정식이 있다. 따라서 운동 분석이 필요하다.
+
+관찰 모델방정식과 관련하여 순무에 의해 운반되는 2차원 레이저 센서를 예를 들어 보면, 레이저 센서가 2D 랜드마크를 관찰할 때 랜드마크와 순무 몸체 사이의 거리 $r$과 각도 $\phi$의 두 가지 양을 측정할 수 있다는 것을 알고 있다. 랜드마크 점 $y_j = [y_1, y_2]^T_j$을 순무의 위치 $x_k = [x_1, x_2]^T_k$에서 관찰한 데이터를 $z_{k,j} = [r_{k,j}, \phi_{k,j}]^T$라고 표시하면 관찰 모델방정식은 다음과 같이 작성된다.
+
+$$\begin{bmatrix} r_{k,j} \\ \phi_{k,j} \end{bmatrix}^T = \begin{bmatrix} \sqrt{(y_{1,j} - x_{1,k})^2 + (y_{2,j} - x_{2,k})^2} \\ \arctan\left(\frac{y_{2,j} - x_{2,k}}{y_{1,j} - x_{1,k}}\right) \end{bmatrix}^T + v$$
+
