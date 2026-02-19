@@ -122,3 +122,4 @@ $w_k$는 노이즈이며 위의 식은 단순한 선형 관계이다. 그러나 
 
 $$\begin{bmatrix} r_{k,j} \\ \phi_{k,j} \end{bmatrix}^T = \begin{bmatrix} \sqrt{(y_{1,j} - x_{1,k})^2 + (y_{2,j} - x_{2,k})^2} \\ \arctan\left(\frac{y_{2,j} - x_{2,k}}{y_{1,j} - x_{1,k}}\right) \end{bmatrix}^T + v$$
 
+Visual SLAM을 고려할 때 센서는 카메라이고 관찰 방정식은 이미지의 픽셀을 얻기 위해 랜드마크 지점의 사진을 찍는 과정이다. 이 과정에는 카메라 모델에 대한 설명이 포함되며, 이에 대한 자세한 내용은 5장에서 설명하고 여기에서는 건너뛴다.
