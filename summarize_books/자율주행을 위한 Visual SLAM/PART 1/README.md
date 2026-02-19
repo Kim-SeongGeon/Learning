@@ -123,3 +123,12 @@ $w_k$는 노이즈이며 위의 식은 단순한 선형 관계이다. 그러나 
 $$\begin{bmatrix} r_{k,j}, \phi_{k,j} \end{bmatrix}^T = \begin{bmatrix} \sqrt{(y_{1,j} - x_{1,k})^2 + (y_{2,j} - x_{2,k})^2}, \arctan\left(\frac{y_{2,j} - x_{2,k}}{y_{1,j} - x_{1,k}}\right) \end{bmatrix}^T + v$$
 
 Visual SLAM을 고려할 때 센서는 카메라이고 관찰 방정식은 이미지의 픽셀을 얻기 위해 랜드마크 지점의 사진을 찍는 과정이다. 이 과정에는 카메라 모델에 대한 설명이 포함되며, 이에 대한 자세한 내용은 5장에서 설명하고 여기에서는 건너뛴다.
+
+위의 두 모델방정식은 서로 다른 센서에 대해 서로 다른 매개변수화형식을 가지고 있음을 알 수 있다. 그리고 일반성을 유지하고 일반 추상형식으로 취하면 SLAM 프로세스는 두 가지 기본 방정식으로 요약될 수 있다.
+
+$$ 
+  \begin{cases}
+    x_k = f(x_{k-1}, u_k, w_k),       & \quad k = 1, \dots , K\\
+    z_{k,j} = h(y_j, x_k, v_{k,j}),  & \quad (k,j) \in \mathcal{0}
+  \end{cases}
+$$
