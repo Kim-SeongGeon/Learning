@@ -263,7 +263,7 @@ $$
 변환 행렬 $T$의 경우 왼쪽 위 모서리는 회전 행렬, 오른쪽은 병진 벡터, 왼쪽 아래 모서리는 0벡터, 오른쪽 아래 모서리는 1이다. 이와 같은 행렬을 특수 유클리드 군(Special Euclidean Group)이라고도 하며 SE(3)으로 표기한다. 
 
 $$
-\text{SE}(3) = \left\{ T = \begin{bmatrix} R & t \\ \mathbf{0}^T & 1 \end{bmatrix} \in \mathbb{R}^{4 \times 4} \mid R \in \text{SO}(3), t \in \mathbb{R}^3 \right\}
+\text{SE}(3) = \{ T = \begin{bmatrix} R & t \\\\ \mathbf{0}^T & 1 \end{bmatrix} \in \mathbb{R}^{4 \times 4} \mid R \in \text{SO}(3), t \in \mathbb{R}^3 \}
 $$
 
 SO(3)와 마찬가지로 행렬의 역변환 표현을 해결하는 변환은 다음과 같다:
